@@ -1,0 +1,63 @@
+{
+	"sap.app": {
+		"id": "com.san.portfolio",
+		"type": "card",
+		"title": "Sample of a List with Bullet Chart",
+		"subTitle": "Sample of a List with Bullet Chart",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"shortTitle": "A short title for this Card",
+		"info": "Additional information about this Card",
+		"description": "A long description for this Card",
+		"tags": {
+			"keywords": [
+				"List",
+				"Chart",
+				"Card",
+				"Sample"
+			]
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "sap-icon://list"
+		}
+	},
+	"sap.card": {
+		"type": "List",
+		"header": {
+			"title": "Education",
+			"icon": {
+				"src": "sap-icon://education"
+			}
+			
+		},
+		"content": {
+			"data": {
+				"request": {
+					"url": "./model/data.json"
+				},
+				"path": "/education"
+			},
+			"maxItems": 3,
+			"item": {
+				"title": "{name}",
+				"description": "{branch}   ({from} - {to})",
+		
+				"chart": {
+					
+					"type": "Bullet",
+					"minValue": 0,
+					"maxValue": "{Expected}",
+					"target": "{Target}",
+					"value": "{Actual}",
+					"displayValue": "{Actual}%",
+					"color": "{ChartColor}"
+				}
+			}
+		}
+	}
+	
+}

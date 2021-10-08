@@ -1,0 +1,58 @@
+{
+	"pinfo": {
+        "name": "Sandeep A N",
+        "address": "Bengaluru",
+        "country": "India",
+        "mob": "+91 7676359446",
+        "email": "sandeep.bnvh@gmail.com"
+    },
+    "urls": {
+        "insta": "https://instagram.com/sandeep.a.n",
+        "github": "https://github.com/sandeepbnvh",
+        "linkedin": "https://linkedin.com/in/sandeepbnvh"
+    },
+	"education":[
+	{
+	   "name": "KLS Gogte Institute of technology",
+	   "branch": "Computer Science",
+	   "from": "2015",
+	   "to": "2019",
+	   "location": "Belagavi",
+	   "State": "Karnataka",
+	   "percentage": 78,
+	   "Expected":100,
+	   "Actual":78
+   },
+   {
+	   "name": "Alvas College",
+	   "branch": "Science",
+	   "from": "2013",
+	   "to": "2015",
+	   "location": "Moodbidri",
+	   "State": "Karnataka",
+	   "percentage": 90,
+	   "Expected":100,
+	   "Actual":90,
+	   "ChartColor": "Good"
+   },
+	{
+	   "name": "Vishwa Chetana",
+	   "branch": "General",
+	   "from": "2012",
+	   "to": "2013",
+	   "location": "Davanagere",
+	   "State": "Karnataka",
+	   "percentage": 86,
+	   "Expected":100,
+	   "Actual":86,
+	   "ChartColor": "Good"
+   }
+],
+"employment": {
+	"cname": "TATA Consultancy Service LTD",
+	"from": "Jan-2020",
+	"to": "Current",
+	"designation": "SAP UI5/Fiori Developer"
+}
+}
+
