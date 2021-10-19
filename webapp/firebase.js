@@ -1,7 +1,7 @@
 sap.ui.define([
 	"sap/ui/model/json/JSONModel",
-    "./firebase"
-], function (JSONModel,firebase) {
+   
+], function (JSONModel) {
 	"use strict";
 	
 	// Firebase-config retrieved from the Firebase-console

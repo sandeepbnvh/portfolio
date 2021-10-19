@@ -2,7 +2,7 @@ sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
 	"com/san/portfolio/model/models",
-	"./firebase"
+	"com/san/portfolio/firebase"
 ], function (UIComponent, Device, models,Firebase) {
 	"use strict";
 
@@ -29,7 +29,7 @@ sap.ui.define([
 			this.setModel(models.createDeviceModel(), "device");
 			// Import Firebase in the sap.ui.define
 			// set the firebase model by calling the initializeFirebase function in the Firebase.js file
-		//	this.setModel(Firebase.initializeFirebase(), "firebase");
+		this.setModel(Firebase.initializeFirebase(), "firebase");
 		}
 	});
 });

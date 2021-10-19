@@ -1,74 +1,25 @@
-<core:FragmentDefinition
-    xmlns:core="sap.ui.core"
-    xmlns:mvc="sap.ui.core.mvc"
-	xmlns="sap.uxap"
-	xmlns:m="sap.m"
-    xmlns:f="sap.f"
-	
-	height="100%"
->
-<m:Page class="bgcolor" enableScrolling="false" showFooter="false" showHeader="false">
-
-<ObjectPageLayout  id="ObjectPageLayout"  showAnchorBarPopover="true" upperCaseAnchorBar="true">
-    <headerTitle >
-        <ObjectPageDynamicHeaderTitle >
-            <expandedHeading>
-                <m:Title text="Sandeep A N" wrapping="true"/>
-            </expandedHeading>
-
-            <snappedHeading>
-                <m:FlexBox fitContainer="true" alignItems="End">
-                    <f:Avatar src="sap-icon://picture" backgroundColor="Random" class="sapUiTinyMarginEnd"/>
-                    <m:Title text="Sandeep A N" wrapping="true" />
-                   
-                    <m:Text text="{i18n>XINFO}" ></m:Text>
-          
-                </m:FlexBox>
-            </snappedHeading>
-
-            <expandedContent>
-                <m:Text text="SAP UI5/Fiori Developer"/>
-            </expandedContent>
-            
-            <snappedContent>
-                <m:Text text="SAP UI5/Fiori Developer"/>
-            </snappedContent>
-
-            <snappedTitleOnMobile>
-                <m:Title text="Senior Developer"/>
-            </snappedTitleOnMobile>
-
-            <actions>
-                <m:Button text="Edit" type="Emphasized"/>
-                
-                <m:OverflowToolbarButton icon="sap-icon://action" type="Transparent" text="Share" tooltip="action"/>
-            </actions>
-        </ObjectPageDynamicHeaderTitle>
-    </headerTitle>
-   
-
-    <sections>
-        <ObjectPageSection  titleUppercase="false" title="Section 1">
-          
-                <ObjectPageSubSection title="Subsection" titleUppercase="false">
-                    <blocks>
-                       <m:Text text="Hello"></m:Text>
-                    </blocks>
-                </ObjectPageSubSection>
-   
-        </ObjectPageSection>
-
-        <ObjectPageSection titleUppercase="false" title="Section 1">
-          
-            <ObjectPageSubSection title="Subsection" titleUppercase="false">
-                <blocks>
-                   <m:Text text="Hello"></m:Text>
-                </blocks>
-            </ObjectPageSubSection>
-
-    </ObjectPageSection>
-
-</sections>
-</ObjectPageLayout>
-</m:Page>
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:f="sap.f">
+	<ResponsivePopover showHeader="false" placement="Auto"  id="mypopover" >
+<form:SimpleForm  backgroundDesign="Transparent" id="SimpleFormToolbar"
+									editable="true"
+									layout="ResponsiveGridLayout"
+									singleContainerFullSize="false"
+									ariaLabelledBy="Title1" >
+									<form:content>
+										<Label  text="Name" />
+										<Input  placeholder="Enter your Name" required="true" id="name" value=" " />
+										<Label text="Email" />
+										<Input required="true" change="onSave"  placeholder="Enter your email" id="email" type="Email" value=""/>
+										<Label text="Message" />
+										<TextArea placeholder="Type your message" required="true" id="message" value="" ></TextArea>
+										<SegmentedButton  selectedKey="small">
+											<items>
+												<SegmentedButtonItem press="onSave" text="Submit" icon="sap-icon://paper-plane"  />
+												<SegmentedButtonItem press="initializeForm" text="Reset" icon="sap-icon://reset" />
+												<SegmentedButtonItem  press="handleCloseButton" text="Cancel" icon="sap-icon://decline" />
+											</items>
+										</SegmentedButton>
+									</form:content>
+								</form:SimpleForm>
+							</ResponsivePopover>
 </core:FragmentDefinition>
