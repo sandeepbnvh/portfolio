@@ -6,30 +6,27 @@
 	xmlns:f="sap.f"
 	xmlns:form="sap.ui.layout.form"
 	xmlns:w="sap.ui.integration.widgets"
-	xmlns:cssgrid="sap.ui.layout.cssgrid"
-	xmlns:microchart="sap.suite.ui.microchart"
 	xmlns="sap.m"
-	xmlns:grid="sap.ui.layout.cssgrid"
 	displayBlock="true">
-
-
-  <App>
-	<pages>
-			   <Page backgroundDesign="Transparent"  class="image" showHeader="false" showFooter="true">
+  <App id="idApp"  > 
+		<pages>
+			   <Page backgroundDesign="Transparent"  showHeader="false" showFooter="false">
 				  <content>
-					<l:ResponsiveSplitter id="splitView">
-						<l:PaneContainer>
-							<l:SplitPane requiredParentWidth="100" id="default">
+					<l:ResponsiveSplitter  id="splitView">
+						<l:PaneContainer >
+							<l:SplitPane  requiredParentWidth="100" id="default">
 								<l:layoutData  >
-									<l:SplitterLayoutData minSize="200%" size="45%" />
+									<l:SplitterLayoutData  minSize="200%" size="35%" />
 								</l:layoutData>
+								<Page backgroundDesign="Transparent" class="image1" showFooter="true" showHeader="false" >
 								<Panel  backgroundDesign="Transparent">
 									<f:Avatar class="avatar kenburns-top " src="./images/astronut.png" displaySize="XL"/>
-									<f:Avatar class="avatar " src="https://api.iconify.design/ri:linkedin-box-fill.svg" displaySize="XS" press="onLinkedIn"/>
-									<f:Avatar class="avatar " src="https://api.iconify.design/icomoon-free:github.svg" displaySize="XS" press="ongithub"/>
-									<f:Avatar class="avatar" src="https://api.iconify.design/ph:instagram-logo-duotone.svg" displaySize="XS" press="onInstagram"/>
-									<f:Avatar class="avatar" src= "https://api.iconify.design/mdi:email-edit-outline.svg" displaySize="XS" press="handlePopoverPress" ></f:Avatar>
+									<f:Avatar class="avatar " src="./images/linkedin.svg" displaySize="XS" displayShape="Square" press="onLinkedIn"/>
+									<f:Avatar class="avatar " src="./images/github.svg" displaySize="XS" displayShape="Square" press="ongithub"/>
+									<f:Avatar class="avatar" src="./images/instagram.png" displaySize="XS" displayShape="Square" press="onInstagram"/>
+									<f:Avatar class="avatar" src= "./images/mail.png" displaySize="XS" displayShape="Square" press="onMail" ></f:Avatar>
 								</Panel>
+							</Page>
 							</l:SplitPane>
 							
 							<l:PaneContainer>
@@ -37,119 +34,89 @@
 									<l:layoutData>
 										<l:SplitterLayoutData  size="80%" />
 									</l:layoutData>
-									<Page showNavButton="true" backgroundDesign="Transparent"  showFooter="false" showHeader="false">
+									<Page showNavButton="true" class="image" backgroundDesign="Transparent"  showFooter="true" showHeader="false">
 										<Panel   backgroundDesign="Transparent"   height="100%" >
-										
-											<Button icon="sap-icon://email" text="Say Hi!" class="button" press="handlePopoverPress"/>
+											<Button icon="sap-icon://email" text="Say Hi!" type="Transparent" class="button" press="handlePopoverPress"/>
+											<Button icon="sap-icon://email" text="Hire Me!" type="Transparent" class="button1" press="downloadResume"/>
 											<Text text="{i18n>XINFO}" textAlign="Initial"  class="fontcolor   avatar"></Text>
 											<Text text="{i18n>ss}" textAlign="Initial"   class="fontcolor2 sapUiLargeMarginTop avatar" />
-											
-											<!-- <grid:CSSGrid
-											id="grid2"
-											gridTemplateRows="1fr 1fr 1fr"
-											gridTemplateColumns="repeat(2,50px)"
-											gridGap="1rem">
-											<VBox >
-												<f:Avatar displaySize="XS" displayShape="Square"  src="https://api.iconify.design/zmdi:language-javascript.svg" />
-											</VBox>
-											<VBox >
-												<f:Avatar displaySize="XS" displayShape="Square"  backgroundColor="Accent6" src="sap-icon://sap-ui5"/>
-											</VBox>
-											<VBox class="demoBox">
-												<f:Avatar displaySize="XS" displayShape="Square"  src="https://api.iconify.design/logos:javascript.svg" />
-											</VBox>
-											<VBox class="demoBox">
-												<f:Avatar displaySize="XS" displayShape="Square"  src="https://api.iconify.design/logos:javascript.svg" />
-											</VBox>
-											<VBox class="demoBox">
-												<f:Avatar displaySize="XS" displayShape="Square"  src="https://api.iconify.design/logos:javascript.svg" />
-											</VBox>
-											<VBox class="demoBox">
-												<f:Avatar displaySize="XS" displayShape="Square"  src="https://api.iconify.design/logos:javascript.svg" />
-											</VBox>
-										</grid:CSSGrid> -->
 										</Panel>
-										<IconTabBar backgroundDesign="Transparent"  id="idIconTabBar" select="handleIconTabBarSelect" headerBackgroundDesign="Transparent" class="sapUiSmallMarginBeginEnd ">
+										<IconTabBar backgroundDesign="Transparent"  id="idIconTabBar" select="handleIconTabBarSelect" headerBackgroundDesign="Transparent" class="sapUiResponsiveMargin ">
 											<items>
-												<IconTabFilter text="Home">
-													<f:GridContainer class="sapUiVisibleOnlyOnPhone sapUiResponsiveMargin">
-														<f:layout >
-															<f:GridContainerSettings rowSize="5rem" columnSize="5rem" gap="0.5rem" />
-														</f:layout>
-														<f:layoutS>
-															<f:GridContainerSettings rowSize="7rem" columnSize="7rem" gap="0.5rem" />
-														</f:layoutS>
-														<w:Card width="auto"  class="sapUiTinyMarginBeginEnd  sapUiMediumMarginTopBottom" manifest="{manifests>/list1}" baseUrl="./">
-															<w:layoutData>
-																<f:GridContainerItemLayoutData rows="4" columns="4" />
-															</w:layoutData>
-														</w:Card>
-													</f:GridContainer>
-			
-													<f:GridContainer busyIndicatorDelay="2000">
-														<f:layout>
-															<f:GridContainerSettings rowSize="5rem" columnSize="5rem" gap="1rem" />
-														</f:layout>
-														<f:layoutS>
-															<f:GridContainerSettings rowSize="5rem" columnSize="5rem" gap="0.5rem" />
-														</f:layoutS>
-														<w:Card manifest="{manifests>/list2}" class=" sapUiTinyMarginBeginEnd " width="auto" height="auto">
+												
+												<IconTabFilter text="Skills">
+														<f:GridContainer class=" sapUiMediumMarginBeginEnd sapUiMediumMarginTop ">
+															<f:layout >
+																<f:GridContainerSettings rowSize="7rem" columnSize="4rem" gap="1rem" />
+															</f:layout> 
+															<f:layoutS>
+																<f:GridContainerSettings rowSize="7rem" columnSize="4rem" gap="1rem" />
+															</f:layoutS>
+															<w:Card width="280px" height="auto"    manifest="./card.json" baseUrl="./">
+																<w:layoutData>
+																	<f:GridContainerItemLayoutData rows="4" columns="4" />
+																</w:layoutData>
+															</w:Card>
+															<w:Card manifest="{manifests>/Skill}" width="280px" height="auto"  >
 															<w:layoutData>
 																<f:GridContainerItemLayoutData minRows="4" columns="4" />
 															</w:layoutData>
 														</w:Card>
-														
-			
-														<!-- <w:Card manifest="{manifests>/donut}" class="sapUiVisibleOnlyOnDesktop" width="auto" height="auto">
-															<w:layoutData>
-																<f:GridContainerItemLayoutData rows="4" columns="4" />
-															</w:layoutData>
-														</w:Card> -->
-														
-													</f:GridContainer>
+														</f:GridContainer>
 													</IconTabFilter>
-													<IconTabFilter text="Skills">
-														<!-- <grid:CSSGrid
-														id="grid1"
-														gridTemplateRows="1fr 1fr 1fr"
-														gridTemplateColumns="repeat(2,50px)"
-														gridGap="1rem">
-														<VBox >
-															<f:Avatar displaySize="XS" displayShape="Square"  src="https://api.iconify.design/zmdi:language-javascript.svg" />
-														</VBox>
-														<VBox >
-															<f:Avatar displaySize="XS" displayShape="Square"  backgroundColor="Accent6" src="sap-icon://sap-ui5"/>
-														</VBox>
-														<VBox class="demoBox">
-															<f:Avatar displaySize="XS" displayShape="Square"  src="https://api.iconify.design/logos:javascript.svg" />
-														</VBox>
-														<VBox class="demoBox">
-															<f:Avatar displaySize="XS" displayShape="Square"  src="https://api.iconify.design/logos:javascript.svg" />
-														</VBox>
-														<VBox class="demoBox">
-															<f:Avatar displaySize="XS" displayShape="Square"  src="https://api.iconify.design/logos:javascript.svg" />
-														</VBox>
-														<VBox class="demoBox">
-															<f:Avatar displaySize="XS" displayShape="Square"  src="https://api.iconify.design/logos:javascript.svg" />
-														</VBox>
-													</grid:CSSGrid> -->
+													<IconTabFilter text="Work">
+														<commons:Timeline
+														id="idTimeline"
+														enableDoubleSided="true"
+														showHeaderBar="false"
+														
+														growingThreshold="10"
+														content="{/Employees}">
+													<commons:content>
+														<commons:TimelineItem
+																status="Progress"
+																id="idTemplateItem"
+																dateTime="{HireDate}"
+																title="{JobTitle}"
+																userNameClickable="true"
+																userPicture="{Photo}"
+																text="{JobResponsibilities}"
+																userName="{Name}"
+																icon="{Icon}">
+														</commons:TimelineItem>
+													</commons:content>
+												</commons:Timeline>
 													</IconTabFilter>
+													<IconTabFilter  text="Education">
+														<f:GridContainer class="sapUiSmallMarginTop" busyIndicatorDelay="2000">
+															<f:layout>
+																<f:GridContainerSettings rowSize="5rem" columnSize="5rem" gap="1rem" />
+															</f:layout>
+															<f:layoutS>
+																<f:GridContainerSettings rowSize="5rem" columnSize="5rem" gap="0.5rem" />
+															</f:layoutS>
+															<w:Card manifest="{manifests>/Education}" class=" sapUiTinyMarginBeginEnd " width="280px" height="auto">
+																<w:layoutData>
+																	<f:GridContainerItemLayoutData minRows="4" columns="4" />
+																</w:layoutData>
+															</w:Card>
+														</f:GridContainer>
+														</IconTabFilter>
 											</items>
-										</IconTabBar>	
-										
-										<l:HorizontalLayout class="sapUiContentPadding" >
-											<l:content>
-												
-											</l:content>
-										</l:HorizontalLayout>
+										</IconTabBar>
+											
+										<Text textAlign="Center" class="sapUiResponsiveMargin footerfont"  width="auto" text="{i18n>XFOOTER}"></Text>
+										<Text  textAlign="Initial" class="footerfont" text="{i18n>XCOPY}"></Text>
 									</Page>
 								</l:SplitPane>
 							</l:PaneContainer>
 						</l:PaneContainer>
 					</l:ResponsiveSplitter>
 				  </content>
+				  
 			   </Page>
 			</pages>
-		 </App>
 
+		 </App>
+		
 </mvc:View>

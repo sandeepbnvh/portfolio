@@ -1,11 +1,17 @@
 {
 	"pinfo": {
-        "name": "Sandeep A N",
+        "firstname": "Sandeep",
+		"lastname":"A N",
         "address": "Bengaluru",
         "country": "India",
         "mob": "+91 7676359446",
-        "email": "sandeep.bnvh@gmail.com"
+        "email": "sandeep.bnvh@gmail.com",
+		"position":"SAP UI5/Fiori Developer",
+		"description":"Hi I am Sandeep, a 23 year old Web developer living in Bengaluru, India. I am a Computer Science Engineer, currently working with awesome folks at TCS. Connect with me on LinkedIn. I am always excited to do collab with like minded people, lets discuss over coffee."
     },
+	
+
+	
     "urls": {
         "insta": "https://instagram.com/sandeep.a.n",
         "github": "https://github.com/sandeepbnvh",
@@ -21,7 +27,8 @@
 	   "State": "Karnataka",
 	   "percentage": 78,
 	   "Expected":100,
-	   "Actual":78
+	   "Actual":78,
+	   "grade":"B.E"
    },
    {
 	   "name": "Alvas College",
@@ -33,7 +40,8 @@
 	   "percentage": 90,
 	   "Expected":100,
 	   "Actual":90,
-	   "ChartColor": "Good"
+	   "ChartColor": "Good",
+	   "grade":"12th"
    },
 	{
 	   "name": "Vishwa Chetana",
@@ -45,14 +53,140 @@
 	   "percentage": 86,
 	   "Expected":100,
 	   "Actual":86,
-	   "ChartColor": "Good"
+	   "ChartColor": "Good",
+	   "grade":"10th"
    }
 ],
-"employment": {
+"employment": [
+	{
 	"cname": "TATA Consultancy Service LTD",
 	"from": "Jan-2020",
 	"to": "Current",
 	"designation": "SAP UI5/Fiori Developer"
-}
+}],
+"pages": [
+	{
+		"pageId": "companyPageId",
+		"header": "Company info",
+		"title": "TATA Consultancy Services",
+		"titleUrl": "https://tcs.com",
+		"icon": "sap-icon://building",
+		"displayShape": "Square",
+		"description": "Sandeep A N",
+		"groups": [
+			{
+				"heading": "Contact Details",
+				"elements": [
+					{
+						"label": "Email",
+						"value": "sandeep.bnvh@gmail.com",
+						"emailSubject": "Subject",
+						"elementType": "email"
+					},
+					{
+						"label": "LinkedIn",
+						"url": "https://linkedin.com/in/sandeepbnvh",
+						"emailSubject": "Subject",
+						"elementType": "text"
+					},
+					{
+						"label": "Address",
+						"value": "Bengaluru India",
+						"elementType": "text"
+					}
+				]
+			},
+			{
+				"heading": "Experiance",
+				"elements": [
+					{
+						"label": "Name",
+						"value": "John Doe",
+						"elementType": "pageLink",
+						"pageLinkId": "companyEmployeePageId"
+					}
+					
+					
+				]
+			}
+		]
+	}
+	
+],
+"skills": [
+	{
+		"Name": "SAP UI5",
+		"maxValue":100,
+		"Expected":100,
+		"Actual":80,
+		"ChartColor":"Good"
+	},
+	{
+		"Name": "Javascript",
+		"maxValue":100,
+		"Expected":100,
+		"Actual":70
+		
+	},
+	{
+		"Name": "JQuery",
+		"maxValue":100,
+		"Expected":100,
+		"Actual":80,
+		"ChartColor":"Good"
+	},
+	
+	{
+		"Name": "NodeJS",
+		"maxValue":100,
+		"Expected":100,
+		"Actual":60,
+		"ChartColor":"Critical"
+	
+	},
+	{
+		"Name": "Core Java",
+		"maxValue":100,
+		"Expected":100,
+		"Actual":75,
+		"ChartColor":"Good"
+		
+	}
+],
+"interest": [
+	{
+		"Name": "ML and AI ",
+		"icon":"https://miro.medium.com/max/256/0*BLadIwqJ9tTIln9F"
+	},
+	{
+		"Name": "PWA's",
+		"icon":"https://www.digitalludhiana.com/img/services/online-application-developers/progressive-web-app-development.png"
+		
+	},
+	{
+		"Name": "Web",
+		"icon":"https://cdn.iconscout.com/icon/free/png-512/app-application-browser-internet-page-web-code-coding-window-27558.png"
+	}
+	
+],
+"Employees": [
+	{
+		"Name": "TATA Consultancy Services LTD",
+		"JobTitle": "SAP UI5 Developer",
+		"Photo": "sap-icon://building",
+		"Icon": "sap-icon://suitcase",
+		"JobResponsibilities": "Developing responsive user interface for both mobile and desktop platforms.\nDesigning the Frontend using XML views.\nImplementing CRUD operations using OData service in SAPUI5.\nFetching the backend data using SAP Gateway URL.\n Runtime Browser debugging for fiori apps.",
+		"HireDate": "2020 - Current"
+	},
+	{
+		"Name": "C-Quad Computers, ",
+		"JobTitle": "Intern",
+		"Photo": "sap-icon://building",
+		"Icon": "sap-icon://suitcase",
+		"JobResponsibilities": "Understanding and implementing the basic Machine Learning algorithm's to solve the real world problems.\n Exposure to different machine learning libraries.",
+		"HireDate": "2019"
+	}
+]
+
 }
 

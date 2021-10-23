@@ -28,9 +28,9 @@
 	"sap.card": {
 		"type": "List",
 		"header": {
-			"title": "Education",
+			"title": " Core Skill",
 			"icon": {
-				"src": "sap-icon://skills"
+				"src": "sap-icon://request"
 			}
 			
 		},
@@ -41,25 +41,22 @@
 				},
 				"path": "/skills"
 			},
-			"maxItems": 3,
+			"maxItems": 10,
 			"item": {
-				"title": "{name}",
-				"description": "{grade}.     {branch}   ({from} - {to})",
-		
+				"title": "{icon}{Name}",
+				
 				"chart": {
-					
 					"type": "Bullet",
 					"minValue": 0,
 					"maxValue": "{Expected}",
 					"target": "{Target}",
 					"value": "{Actual}",
-					"displayValue": "{Actual}%",
 					"color": "{ChartColor}"
 				}
 			}
 		}
 	},
-	"list1": {
+	"Work": {
 		"sap.app": {
 			"id": "sample.CardsLayout.model.list",
 			"type": "card"
@@ -105,7 +102,7 @@
 			}
 		}
 	},
-	"list2":{
+	"Education":{
 		"sap.card": {
 			"type": "Timeline",
 			"header": {
@@ -145,14 +142,14 @@
 			}
 		}
 	},
-	"donut":{
+	"Skill":{
 		"sap.card": {
 			"type": "List",
 			"width":"30%",
 			"header": {
-				"title": "Skill Set",
+				"title": "Exploring",
 				"icon": {
-					"src": "sap-icon://list"
+					"src": "sap-icon://target-group"
 				}
 			},
 			"content": {
@@ -160,27 +157,16 @@
 					"request": {
 						"url": "./model/data.json"
 					},
-					"path": "/skills"
+					"path": "/interest"
 				},
 				"item": {
 					"icon": {
 						"src": "{icon}"
 					},
-					"title": "{Name}",
-					"actions": [
-						{
-							"type": "Navigation",
-							"enabled": "{= ${url}}",
-							"parameters": {
-								"url": "{url}"
-							}
-						}
-					]
+					"title": "{Name}"
+					
 				}
 			}
 		}
 	}
-
-	
-	
 }
