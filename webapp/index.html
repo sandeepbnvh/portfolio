@@ -25,12 +25,22 @@
            <script src="https://smtpjs.com/v3/smtp.js"></script> 
 
     </head>
-    <body class="sapUiBody">
-        <div
-            data-sap-ui-component
-            data-name="com.san.portfolio"
-            data-id="container"
-            data-settings='{"id" : "portfolio"}'
-        ></div>
-    </body>
+    <script>
+        sap.ui.getCore().attachInit(function () {
+            sap.ui.require([
+                "sap/ui/core/ComponentContainer"
+            ], function (ComponentContainer) {
+
+                new ComponentContainer({
+                    name : 'com.san.portfolio',
+                    height : "100%",
+                    settings : {
+                        id : "com.san.portfolio"
+                    }
+                }).placeAt('content');
+            });
+        });
+    </script>
+    <body class="sapUiBody sapUiSizeCompact" id="content">
+	</body>
 </html>

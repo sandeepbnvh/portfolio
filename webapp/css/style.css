@@ -6,7 +6,7 @@
  background-image: url("../images/foot.png");
  background-position: bottom  ;  
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: contain;
 
 }
 .image1 {
