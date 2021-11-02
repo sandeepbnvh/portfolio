@@ -1,5 +1,6 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:f="sap.f">
 	<ResponsivePopover showHeader="false" placement="Auto"  id="mypopover" >
+	<BusyDialog id="BusyDialog"></BusyDialog>
 <form:SimpleForm  backgroundDesign="Transparent" id="SimpleFormToolbar"
 									editable="true"
 									layout="ResponsiveGridLayout"

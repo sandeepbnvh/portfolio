@@ -6,18 +6,20 @@ sap.ui.define(
     "sap/ui/model/json/JSONModel",
     "sap/m/MessageBox",
     "sap/m/MessageToast",
-	'sap/ui/core/Fragment',
+  'sap/ui/core/Fragment',
   "sap/ui/core/util/File",
+  "sap/ui/core/BusyIndicator"
   ],
   /**
    * @param {typeof sap.ui.core.mvc.Controller} Controller
    */
-  function (mobileLibrary,Controller, JSONModel, MessageBox, MessageToast,Fragment) {
+  function (mobileLibrary,Controller, JSONModel, MessageBox, MessageToast,Fragment,BusyIndicator) {
     var URLHelper = mobileLibrary.URLHelper;
     "use strict";
    
     return Controller.extend("com.san.portfolio.controller.App", {
       onInit: function () {
+
         var cardManifests = new JSONModel();
         cardManifests.loadData(
           sap.ui.require.toUrl("com/san/portfolio/card.json")
@@ -25,8 +27,9 @@ sap.ui.define(
         this.getView().setModel(cardManifests, "manifests");
         this.byId("idTimeline").setEnableScroll(false);
       // this.byId("idApp").se
-
+     // this.showBusyIndicator(4000);
       },
+     
 
  
       initializeForm: function () {
@@ -54,7 +57,7 @@ sap.ui.define(
               oA.style.display = "none";
               //if (sap.ui.Device.system.phone) {
               //  for whatver reason, it's not possible to set this for mobile devices
-              //	oA.target = "_blank";
+              //  oA.target = "_blank";
               //}
               oA.download = sFilenameFromServer;
               document.body.appendChild(oA);
@@ -70,24 +73,24 @@ sap.ui.define(
         oXHR.send();
       },
 
-	  handlePopoverPress: function (oEvent) {
-		var oButton = oEvent.getSource(),
-			oView = this.getView();
-		// create popover
-		if (!this._pPopover) {
-			this._pPopover = Fragment.load({
-				id: oView.getId(),
-				name: "com.san.portfolio.fragment.detail",
-				controller: this
-			}).then(function(oPopover) {
-				oView.addDependent(oPopover);
-				return oPopover;
-			});
-		}
-		this._pPopover.then(function(oPopover) {
-			oPopover.openBy(oButton);
-		});
-	},
+    handlePopoverPress: function (oEvent) {
+    var oButton = oEvent.getSource(),
+      oView = this.getView();
+    // create popover
+    if (!this._pPopover) {
+      this._pPopover = Fragment.load({
+        id: oView.getId(),
+        name: "com.san.portfolio.fragment.detail",
+        controller: this
+      }).then(function(oPopover) {
+        oView.addDependent(oPopover);
+        return oPopover;
+      });
+    }
+    this._pPopover.then(function(oPopover) {
+      oPopover.openBy(oButton);
+    });
+  },
  
   onSave:function(){
     var name = this.getView().byId("name").getValue();
@@ -95,11 +98,13 @@ sap.ui.define(
     var msg = this.getView().byId("message").getValue();
     var mailregex = /^\w+[\w-+\.]*\@\w+([-\.]\w+)*\.[a-zA-Z]{2,}$/;
      if(name == "" || email == "" || msg == "") {
-      MessageToast.show("Please enter Valid Details");
+      MessageToast.show("Please enter all the Details");
     }
     else if (!mailregex.test(email)) {
       MessageToast.show(email + " is not a valid email address");
     } else {
+      var oDialog = this.byId("BusyDialog");
+      oDialog.open();
       Email.send({
         SecureToken:"41f3b9f9-dfd0-4acd-8e47-4d82d5c96692",
         To : 'sandeep.bnvh@gmail.com',
@@ -116,20 +121,24 @@ sap.ui.define(
                   email: email,
                   msg: msg,
                 });
+                oDialog.close();
           MessageToast.show("Submitted Successfully");
             }else{
+              oDialog.close();
               MessageToast.show(email + " is not a valid email address");
             }
           });
+         
       this.byId("mypopover").close();
     } 
   },
   
-	handleCloseButton: function (oEvent) {
-		// note: We don't need to chain to the _pPopover promise, since this event-handler
-		// is only called from within the loaded dialog itself.
-		this.byId("mypopover").close();
-	},
+  handleCloseButton: function (oEvent) {
+    // note: We don't need to chain to the _pPopover promise, since this event-handler
+    // is only called from within the loaded dialog itself.
+    
+    this.byId("mypopover").close();
+  },
   onLinkedIn:function(){
     window.open("https://www.linkedin.com/in/sandeepbnvh/");
   },
