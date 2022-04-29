@@ -92,25 +92,25 @@ sap.ui.define(
     });
   },
  
-  onSave:function(){
+   onSave:function(){
     var name = this.getView().byId("name").getValue();
     var email = this.getView().byId("email").getValue();
     var msg = this.getView().byId("message").getValue();
     var mailregex = /^\w+[\w-+\.]*\@\w+([-\.]\w+)*\.[a-zA-Z]{2,}$/;
      if(name == "" || email == "" || msg == "") {
-      MessageToast.show("Please enter all the Details");
+      MessageToast.show("Please enter Valid Details");
     }
     else if (!mailregex.test(email)) {
       MessageToast.show(email + " is not a valid email address");
     } else {
       var oDialog = this.byId("BusyDialog");
-      oDialog.open();
+			oDialog.open();
       Email.send({
         SecureToken:"41f3b9f9-dfd0-4acd-8e47-4d82d5c96692",
         To : 'sandeep.bnvh@gmail.com',
-        From : email,
+        From : 'sandeep.bnvh2@gmail.com',
         Subject : name+"sent a message-- Portfolio!!!",
-        Body : msg
+        Body : msg +email
         }).then(message=>{
             if(message=='OK'){
               var messagesRef = firebase.database().ref("messages");

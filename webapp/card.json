@@ -41,7 +41,7 @@
 				},
 				"path": "/skills"
 			},
-			"maxItems": 10,
+			"maxItems": 6,
 			"item": {
 				"title": "{icon}{Name}",
 				
@@ -52,6 +52,9 @@
 					"target": "{Target}",
 					"value": "{Actual}",
 					"color": "{ChartColor}"
+				},
+				"icon": {
+					"src": "{Icon}"
 				}
 			}
 		}

@@ -125,64 +125,68 @@
 		"maxValue":100,
 		"Expected":100,
 		"Actual":80,
-		"ChartColor":"Good"
+		"ChartColor":"Good",
+		"Icon":"./images/phenix_blue.svg"
 	},
 	{
 		"Name": "Javascript",
 		"maxValue":100,
 		"Expected":100,
-		"Actual":70
+		"Actual":75,
+		"ChartColor":"Good",
+		"Icon":"./images/js.png"
 		
 	},
-	{
-		"Name": "JQuery",
-		"maxValue":100,
-		"Expected":100,
-		"Actual":80,
-		"ChartColor":"Good"
-	},
-	
 	{
 		"Name": "NodeJS",
 		"maxValue":100,
 		"Expected":100,
 		"Actual":60,
-		"ChartColor":"Critical"
+		"ChartColor":"Critical",
+		"Icon":"./images/node.svg"
 	
 	},
 	{
 		"Name": "Core Java",
 		"maxValue":100,
 		"Expected":100,
-		"Actual":75,
-		"ChartColor":"Good"
+		"Actual":70,
+		"Icon":"./images/java.png"
 		
 	}
 ],
 "interest": [
 	{
 		"Name": "ML and AI ",
-		"icon":"https://miro.medium.com/max/256/0*BLadIwqJ9tTIln9F"
+		"icon":"./images/aiml.png"
 	},
 	{
 		"Name": "PWA's",
-		"icon":"https://www.digitalludhiana.com/img/services/online-application-developers/progressive-web-app-development.png"
+		"icon":"./images/pwa.png"
 		
 	},
 	{
-		"Name": "Web",
+		"Name": "Web3",
 		"icon":"https://cdn.iconscout.com/icon/free/png-512/app-application-browser-internet-page-web-code-coding-window-27558.png"
 	}
 	
 ],
 "Employees": [
 	{
+		"Name": "Infosys LTD",
+		"JobTitle": "SAP UI5 Developer",
+		"Photo": "sap-icon://building",
+		"Icon": "sap-icon://suitcase",
+		"JobResponsibilities": "Developing responsive user interface for both mobile and desktop platforms.\nImplementing CRUD operations using OData service in SAPUI5.\nFetching the backend data using SAP Gateway URL.\n Runtime Browser debugging for fiori apps.",
+		"HireDate": "2022 - Current"
+	},
+	{
 		"Name": "TATA Consultancy Services LTD",
 		"JobTitle": "SAP UI5 Developer",
 		"Photo": "sap-icon://building",
 		"Icon": "sap-icon://suitcase",
 		"JobResponsibilities": "Developing responsive user interface for both mobile and desktop platforms.\nDesigning the Frontend using XML views.\nImplementing CRUD operations using OData service in SAPUI5.\nFetching the backend data using SAP Gateway URL.\n Runtime Browser debugging for fiori apps.",
-		"HireDate": "2020 - Current"
+		"HireDate": "2020 - 2022"
 	},
 	{
 		"Name": "C-Quad Computers, ",
