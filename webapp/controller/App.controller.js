@@ -19,7 +19,8 @@ sap.ui.define(
    
     return Controller.extend("com.san.portfolio.controller.App", {
       onInit: function () {
-
+        
+        this.getView().setBusy(true);
         var cardManifests = new JSONModel();
         cardManifests.loadData(
           sap.ui.require.toUrl("com/san/portfolio/card.json")
@@ -28,9 +29,26 @@ sap.ui.define(
         this.byId("idTimeline").setEnableScroll(false);
       // this.byId("idApp").se
      // this.showBusyIndicator(4000);
+     this.getView().setBusy(false);
       },
-     
-
+      showBusyIndicator : function (iDuration, iDelay) {
+        BusyIndicator.show(iDelay);
+  
+        if (iDuration && iDuration > 0) {
+          if (this._sTimeoutId) {
+            clearTimeout(this._sTimeoutId);
+            this._sTimeoutId = null;
+          }
+  
+          this._sTimeoutId = setTimeout(function() {
+            this.hideBusyIndicator();
+          }.bind(this), iDuration);
+        }
+      },
+  
+      busy:function () {
+        this.showBusyIndicator(4000, 0);
+      },
  
       initializeForm: function () {
         var name = this.getView().byId("name");
@@ -109,8 +127,8 @@ sap.ui.define(
         SecureToken:"41f3b9f9-dfd0-4acd-8e47-4d82d5c96692",
         To : 'sandeep.bnvh@gmail.com',
         From : 'sandeep.bnvh2@gmail.com',
-        Subject : name+"sent a message-- Portfolio!!!",
-        Body : msg +email
+        Subject : name+" "+" sent a message -- Portfolio!!!",
+        Body : email+ "\n"+msg
         }).then(message=>{
             if(message=='OK'){
               var messagesRef = firebase.database().ref("messages");

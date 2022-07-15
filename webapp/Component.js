@@ -7,7 +7,7 @@ sap.ui.define([
 	"use strict";
 
 	return UIComponent.extend("com.san.portfolio.Component", {
-
+		
 		metadata: {
 			manifest: "json",
 			card:"json"
@@ -19,6 +19,8 @@ sap.ui.define([
 		 * @override
 		 */
 		init: function () {
+			sap.ui.core.BusyIndicator.show(3000);
+			
 			// call the base component's init function
 			UIComponent.prototype.init.apply(this, arguments);
 
@@ -30,6 +32,7 @@ sap.ui.define([
 			// Import Firebase in the sap.ui.define
 			// set the firebase model by calling the initializeFirebase function in the Firebase.js file
 		this.setModel(Firebase.initializeFirebase(), "firebase");
+		sap.ui.core.BusyIndicator.hide();
 		}
 	});
 });
