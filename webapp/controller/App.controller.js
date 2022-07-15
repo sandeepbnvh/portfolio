@@ -132,7 +132,7 @@ sap.ui.define(
         To : 'sandeep.bnvh@gmail.com',
         From : 'sandeep.bnvh2@gmail.com',
         Subject : name+" "+" sent a message -- Portfolio!!!",
-        Body : email+ "\n"+msg
+        Body : "From Email :" +email+" Phone Number:"+phone+"Message :"+msg
         }).then(message=>{
             if(message=='OK'){
               var messagesRef = firebase.database().ref("messages");
