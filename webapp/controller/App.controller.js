@@ -114,13 +114,17 @@ sap.ui.define(
     var name = this.getView().byId("name").getValue();
     var email = this.getView().byId("email").getValue();
     var msg = this.getView().byId("message").getValue();
+    var phone=this.getView().byId("phNum").getValue();
     var mailregex = /^\w+[\w-+\.]*\@\w+([-\.]\w+)*\.[a-zA-Z]{2,}$/;
-     if(name == "" || email == "" || msg == "") {
+    var phRegex=/^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$/
+     if(name == "" || email == "" || phone == "") {
       MessageToast.show("Please enter Valid Details");
     }
     else if (!mailregex.test(email)) {
       MessageToast.show(email + " is not a valid email address");
-    } else {
+    } else if (!phRegex.test(phone)) {
+      MessageToast.show(phone + " is not a valid Phone Number");
+    }else {
       var oDialog = this.byId("BusyDialog");
 			oDialog.open();
       Email.send({
@@ -138,6 +142,7 @@ sap.ui.define(
                   name: name,
                   email: email,
                   msg: msg,
+                  phone:phone
                 });
                 oDialog.close();
           MessageToast.show("Submitted Successfully");

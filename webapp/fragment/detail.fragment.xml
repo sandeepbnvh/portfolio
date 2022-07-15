@@ -9,8 +9,10 @@
 									<form:content>
 										<Label  text="Name" />
 										<Input  placeholder="Enter your Name" required="true" id="name" value=" " />
+										<Label text="Phone Number" />
+										<Input required="true"   placeholder="Enter your Phone Number" id="phNum" type="Tel" value=""/>
 										<Label text="Email" />
-										<Input required="true" change="onSave"  placeholder="Enter your email" id="email" type="Email" value=""/>
+										<Input required="true"  placeholder="Enter your email" id="email" type="Email" value=""/>
 										<Label text="Message" />
 										<TextArea placeholder="Type your message" required="true" id="message" value="" ></TextArea>
 										<SegmentedButton  selectedKey="small">
